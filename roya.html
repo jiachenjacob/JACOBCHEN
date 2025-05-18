@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JACOB CHEN - Work</title>
+    <title>JACOB CHEN - ROYA</title>
     <style>
         * {
             margin: 0;
@@ -17,6 +17,10 @@
             color: #ffffff;
             height: 100vh;
             overflow: hidden;
+            background-image: url('images/work_roya.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         
         .container {
@@ -95,6 +99,7 @@
             position: relative;
             padding-left: 20px;
             margin-left: -20px;
+            color: #fff;
         }
         
         .menu-item span::before {
@@ -109,6 +114,10 @@
         }
         
         .menu-item:hover span {
+            color: #d2b48c;
+        }
+        
+        .menu-item.current span {
             color: #d2b48c;
         }
         
@@ -156,13 +165,13 @@
         <div class="left-panel">
             <div class="title-container">
                 <a href="index.html" class="title">JACOB CHEN</a>
-                <a href="index.html" class="work-title">WORK</a>
+                <a href="work.html" class="work-title">WORK</a>
             </div>
             
             <div class="menu">
                 <a href="boundary.html" class="menu-item"><span>BOUNDARY</span></a>
                 <a href="birdsmiss.html" class="menu-item"><span>BIRDS MISS THE SEA</span></a>
-                <a href="roya.html" class="menu-item"><span>ROYA</span></a>
+                <div class="menu-item current"><span>ROYA</span></div>
                 <div class="menu-item"><span>THE INTERMISSION</span></div>
             </div>
         </div>
@@ -171,9 +180,5 @@
             <!-- 内容区域 -->
         </div>
     </div>
-    <script>
-        // 页面加载时自动跳转到第一个菜单页面
-        window.location.href = 'boundary.html';
-    </script>
 </body>
 </html> 
