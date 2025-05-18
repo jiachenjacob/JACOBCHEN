@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摄影 - JACOB CHEN</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="blog-page">
+    <!-- 侧边导航栏 (YouTube 风格) -->
+    <div class="sidebar">
+        <a href="index.html" class="sidebar-logo">JACOB CHEN</a>
+        <nav class="sidebar-nav">
+            <!-- 修改BLOG部分的结构 -->
+            <div class="blog-container">
+            <a href="blog.html" class="nav-item active">
+                <i class="fas fa-blog"></i>
+                <span>BLOG</span>
+            </a>
+                <!-- 下拉菜单 -->
+                <div class="dropdown-content">
+                    <a href="workflow.html" class="dropdown-item" data-target="workflow">工作流程</a>
+                    <a href="director.html" class="dropdown-item" data-target="director">导演</a>
+                    <a href="writer.html" class="dropdown-item" data-target="writer">编剧</a>
+                    <a href="cinematography.html" class="dropdown-item active" data-target="cinematography">摄影</a>
+                    <a href="dit.html" class="dropdown-item" data-target="dit">DIT</a>
+                    <a href="editing.html" class="dropdown-item" data-target="editing">剪辑</a>
+                    <a href="color-grading.html" class="dropdown-item" data-target="color-grading">调色</a>
+                    <a href="nuke.html" class="dropdown-item" data-target="nuke">NUKE合成</a>
+                    <a href="houdini.html" class="dropdown-item" data-target="houdini">HOUDINI特效</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- 主要内容区域 -->
+    <main class="blog-content">
+        <!-- 博客头部区域 -->
+        <header class="blog-header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="blog-header-icons">
+                <a href="#" title="Xiaohongshu"><i class="fa-solid fa-book"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" title="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+            </div>
+        </header>
+        
+        <!-- 分类标题 -->
+        <div class="blogs-title">
+            <h2>摄影 Cinematography</h2>
+        </div>
+        
+        <!-- 分类内容容器 -->
+        <div class="blog-category-container">
+            <!-- 右侧文章内容 -->
+            <div class="category-content full-width">
+                <div class="category-articles active">
+                    <div class="blog-grid">
+                        <!-- 摄影文章 -->
+                        <div class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="images/bg2.jpg" alt="摄影技巧">
+                            </div>
+                            <div class="blog-card-content">
+                                <h2>如何选择适合项目的摄影机</h2>
+                                <p class="blog-date">June 10, 2024</p>
+                                <p class="blog-excerpt">在不同预算和创意需求下，如何为你的项目选择最合适的摄影设备，以及各类摄影机的优缺点比较...</p>
+                                <a href="#" class="blog-read-more">Read More</a>
+                                <span class="blog-category" data-category="摄影">摄影</span>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="images/bg5.jpg" alt="镜头选择">
+                            </div>
+                            <div class="blog-card-content">
+                                <h2>镜头语言：不同焦段的叙事功能</h2>
+                                <p class="blog-date">April 20, 2024</p>
+                                <p class="blog-excerpt">从广角到长焦，不同镜头如何影响观众感知和情感反应，以及如何选择合适的镜头讲述你的故事...</p>
+                                <a href="#" class="blog-read-more">Read More</a>
+                                <span class="blog-category" data-category="摄影">摄影</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/blog.js"></script>
+</body>
+</html> 

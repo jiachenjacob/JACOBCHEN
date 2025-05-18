@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>调色 - JACOB CHEN</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="blog-page">
+    <!-- 侧边导航栏 (YouTube 风格) -->
+    <div class="sidebar">
+        <a href="index.html" class="sidebar-logo">JACOB CHEN</a>
+        <nav class="sidebar-nav">
+            <!-- 修改BLOG部分的结构 -->
+            <div class="blog-container">
+            <a href="blog.html" class="nav-item active">
+                <i class="fas fa-blog"></i>
+                <span>BLOG</span>
+            </a>
+                <!-- 下拉菜单 -->
+                <div class="dropdown-content">
+                    <a href="workflow.html" class="dropdown-item" data-target="workflow" data-category="工作流程" data-title="工作流程">工作流程</a>
+                    <a href="director.html" class="dropdown-item" data-target="director" data-category="导演" data-title="导演">导演</a>
+                    <a href="writer.html" class="dropdown-item" data-target="writer" data-category="编剧" data-title="编剧">编剧</a>
+                    <a href="cinematography.html" class="dropdown-item" data-target="cinematography" data-category="摄影" data-title="摄影">摄影</a>
+                    <a href="dit.html" class="dropdown-item" data-target="dit" data-category="DIT" data-title="DIT">DIT</a>
+                    <a href="editing.html" class="dropdown-item" data-target="editing" data-category="剪辑" data-title="剪辑">剪辑</a>
+                    <a href="color-grading.html" class="dropdown-item active" data-target="color-grading" data-category="调色" data-title="调色">调色</a>
+                    <a href="nuke.html" class="dropdown-item" data-target="nuke" data-category="NUKE合成" data-title="NUKE合成">NUKE合成</a>
+                    <a href="houdini.html" class="dropdown-item" data-target="houdini" data-category="HOUDINI特效" data-title="HOUDINI特效">HOUDINI特效</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- 主要内容区域 -->
+    <main class="blog-content">
+        <!-- 博客头部区域 -->
+        <header class="blog-header">
+            <div class="header-left">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="blog-header-icons">
+                <a href="#" title="Xiaohongshu"><i class="fa-solid fa-book"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" title="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+            </div>
+        </header>
+        
+        <!-- 分类标题 -->
+        <div class="blogs-title">
+            <h2>调色</h2>
+        </div>
+        
+        <!-- 分类内容容器 -->
+        <div class="blog-category-container">
+            <!-- 右侧文章内容 -->
+            <div class="category-content full-width">
+                <div class="category-articles active">
+                    <div class="blog-grid">
+                        <!-- 调色文章 -->
+                        <div class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="images/bg3.jpg" alt="调色技巧">
+                            </div>
+                            <div class="blog-card-content">
+                                <h2>电影调色：从技术到艺术</h2>
+                                <p class="blog-date">May 30, 2024</p>
+                                <p class="blog-excerpt">探索电影调色的过程，从基础技术到艺术表达，以及如何通过色彩语言增强叙事和情感表达...</p>
+                                <a href="#" class="blog-read-more">Read More</a>
+                                <span class="blog-category" data-category="调色">调色</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/blog.js"></script>
+</body>
+</html> 

@@ -1,0 +1,722 @@
+/* YouTube-style Blog Page CSS */
+
+/* Base styles */
+.blog-page {
+    background-color: #0f0f0f;
+    font-family: 'Courier', 'Courier New', monospace, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* Sidebar styles (YouTube-like) */
+.sidebar {
+    width: 240px;
+    background-color: #0f0f0f;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: #fff;
+    padding-top: 0;
+    overflow-y: auto;
+    z-index: 100;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0 20px;
+    margin-bottom: 0;
+    color: #fff;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-top: 30px;
+    background-color: #0f0f0f;
+    border-bottom: none;
+}
+
+.sidebar-logo:hover {
+    color: #d2b48c;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 15px 0;
+    background-color: #0f0f0f;
+    flex-grow: 1;
+    position: relative;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 8px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: color 0.2s;
+}
+
+.nav-item:hover {
+    color: #d2b48c;
+    background-color: transparent;
+}
+
+.nav-item:hover i {
+    color: #d2b48c;
+}
+
+.nav-item.active {
+    background-color: #383838;
+    font-weight: bold;
+}
+
+.nav-item i {
+    margin-right: 20px;
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+    color: #fff;
+}
+
+/* 让ABOUT菜单项显示手型指针 */
+.nav-item[href="javascript:void(0);"] {
+    cursor: pointer;  /* 改为手型指针 */
+    opacity: 0.8;
+}
+
+/* 让BLOG菜单项显示默认指针 */
+.nav-item[href="blog.html"] {
+    cursor: pointer;  /* 改为手型指针 */
+    color: #d2b48c;
+}
+
+.nav-item[href="blog.html"] i {
+    color: #d2b48c;
+}
+
+/* 调整blog-container位置 */
+.blog-container {
+    margin-top: 0;
+    width: 100%;
+    position: relative;
+}
+
+.blog-container .nav-item {
+    margin-top: 0;
+}
+
+/* Main content area */
+.blog-content {
+    flex: 1;
+    margin-left: 240px;
+    padding: 30px;
+    background-color: #0f0f0f;
+}
+
+.blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.blog-header h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0;
+    color: #fff;
+}
+
+.blog-header-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.blog-header-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.blog-header-icons a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Individual icon hover colors */
+.blog-header-icons a:nth-child(1):hover { color: #e1306c; }
+.blog-header-icons a:nth-child(2):hover { color: #e1306c; }
+.blog-header-icons a:nth-child(3):hover { color: #1da1f2; }
+.blog-header-icons a:nth-child(4):hover { color: #0077b5; }
+.blog-header-icons a:nth-child(5):hover { color: #1ab7ea; }
+
+/* 搜索栏容器 */
+.search-bar-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #212121;
+    border-radius: 24px;
+    padding: 5px 15px;
+    width: 450px;
+    border: 1px solid #333;
+    height: 40px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    font-family: 'Courier', 'Courier New', monospace, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    color: #fff;
+}
+
+.search-bar input::placeholder {
+    color: #888;
+}
+
+.search-bar button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #888;
+}
+
+/* Blog grid layout */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.blog-card {
+    background: #212121;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;          /* 使用弹性布局 */
+    flex-direction: column; /* 垂直排列内容 */
+    height: 100%;           /* 确保所有卡片高度一致 */
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.blog-card-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.blog-card:hover .blog-card-image img {
+    transform: scale(1.05);
+}
+
+.blog-card-content {
+    padding: 20px;
+    display: flex;           /* 使用弹性布局 */
+    flex-direction: column;  /* 垂直排列内容 */
+    flex-grow: 1;            /* 占用剩余空间 */
+    position: relative;      /* 为绝对定位的子元素提供参考 */
+    padding-bottom: 50px;    /* 为Read More按钮留出空间 */
+}
+
+.blog-card-content h2 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    font-weight: 500;
+    color: #fff;
+}
+
+.blog-date {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.blog-excerpt {
+    color: #ddd;
+    font-size: 15px;
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;            /* 限制为两行 */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+    height: 3em;                       /* 固定高度为两行 */
+}
+
+.blog-read-more {
+    color: #d2b48c;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    transition: color 0.3s;
+}
+
+.blog-read-more:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .search-bar {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+        padding-top: 0;
+        background-color: #0f0f0f;
+    }
+    
+    .sidebar-logo {
+        font-size: 0;
+        height: 40px;
+        margin-top: 30px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        background-color: #0f0f0f;
+    }
+    
+    .sidebar-logo:before {
+        content: "JC";
+        font-size: 20px;
+        display: block;
+    }
+    
+    .sidebar-nav {
+        padding-top: 40px;
+        background-color: #0f0f0f;
+    }
+    
+    .nav-item span {
+        display: none;
+    }
+    
+    .nav-item i {
+        margin-right: 0;
+    }
+    
+    .nav-item {
+        padding: 15px 0;
+        justify-content: center;
+    }
+    
+    .blog-content {
+        margin-left: 70px;
+        padding: 20px;
+    }
+    
+    .search-bar-container {
+        margin-right: 10px;
+    }
+    
+    .search-bar {
+        width: 250px;
+        height: 40px;
+    }
+    
+    .blog-header {
+        flex-wrap: wrap;
+    }
+    
+    .blog-header h1 {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .blog-header-icons {
+        margin-top: 0;
+    }
+    
+    .search-bar-container {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .search-bar {
+        width: 100%;
+    }
+}
+
+/* 修改下拉菜单样式 */
+.blog-dropdown {
+    position: relative;
+    padding: 0 !important;
+    width: 100%;
+}
+
+.blog-dropdown .nav-item {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown-content {
+    display: block;
+    position: relative;
+    background-color: #1a1a1a;
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 0 0 10px 10px;
+    box-sizing: border-box;
+    margin-top: 0;
+    z-index: 1;
+}
+
+.dropdown-item {
+    color: #fff;
+    padding: 8px 20px;  /* 保持内边距一致 */
+    text-decoration: none;
+    display: flex;      /* 使用flex布局 */
+    justify-content: center;  /* 水平居中 */
+    align-items: center;      /* 垂直居中 */
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown-item:hover {
+    color: #d2b48c;
+    background-color: rgba(210, 180, 140, 0.1);
+}
+
+/* 调整BLOG菜单项的样式 */
+.blog-container .nav-item.active {
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0;
+}
+
+/* 确保下拉菜单在移动端也能正常显示 */
+@media screen and (max-width: 768px) {
+    .dropdown-item {
+        padding: 8px 10px;  /* 减少移动端内边距 */
+    }
+}
+
+/* 修改字体设置，去掉Courier New和字间距 */
+body, input, button {
+    font-family: 'Courier', monospace, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* 确保所有文字使用相同的字体 */
+.nav-item, .sidebar-logo, .blog-card-content, .search-bar input {
+    font-family: 'Courier', monospace, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* 内容区域切换样式 */
+.content-section {
+    display: none;  /* 默认隐藏所有内容区域 */
+}
+
+.active-section {
+    display: grid;  /* 只显示激活的内容区域 */
+}
+
+/* 下拉菜单项激活状态 */
+.dropdown-item.active {
+    color: #d2b48c;
+    font-weight: bold;
+}
+
+/* 添加标题区块样式 */
+.blogs-title {
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.blogs-title h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #fff;
+    margin: 0;
+    font-family: 'Courier', monospace, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.blog-intro {
+    color: #b7b7b7;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 900px;
+    text-align: left;
+    font-family: 'Courier', 'Courier New', monospace, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* 添加头部右侧容器 */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 语言切换样式 */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 5px 12px;
+}
+
+.lang-option {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 2px 5px;
+    transition: all 0.3s ease;
+}
+
+.lang-option:hover {
+    color: #d2b48c;
+}
+
+.lang-option.active {
+    color: #d2b48c;
+    font-weight: bold;
+}
+
+.lang-separator {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 2px;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .header-right {
+        gap: 10px;
+    }
+    
+    .blog-header-icons a {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .language-switcher {
+        padding: 3px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blog-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* 文章分类标签样式 */
+.blog-category {
+    position: absolute;
+    bottom: 17px;  /* 调整为17px，略微向下移动 */
+    right: 20px;
+    background-color: rgba(210, 180, 140, 0.2);
+    color: #d2b48c;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.blog-category:hover {
+    background-color: rgba(210, 180, 140, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.blog-category:active {
+    transform: translateY(0);
+}
+
+/* 根据不同分类设置不同的颜色 */
+.blog-card .blog-category[data-category="导演"] {
+    background-color: rgba(235, 160, 160, 0.2);
+    color: #eba0a0;
+}
+
+.blog-card .blog-category[data-category="编剧"] {
+    background-color: rgba(186, 218, 85, 0.2);
+    color: #bada55;
+}
+
+.blog-card .blog-category[data-category="摄影"] {
+    background-color: rgba(100, 181, 246, 0.2);
+    color: #64b5f6;
+}
+
+.blog-card .blog-category[data-category="DIT"] {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.blog-card .blog-category[data-category="剪辑"] {
+    background-color: rgba(171, 71, 188, 0.2);
+    color: #ab47bc;
+}
+
+.blog-card .blog-category[data-category="调色"] {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+}
+
+.blog-card .blog-category[data-category="NUKE合成"] {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #ff9800;
+}
+
+.blog-card .blog-category[data-category="HOUDINI特效"] {
+    background-color: rgba(3, 169, 244, 0.2);
+    color: #03a9f4;
+}
+
+/* 添加博客分类页面样式 */
+.blog-category-container {
+    display: flex;
+    margin-top: 30px;
+}
+
+.category-content {
+    flex: 1;
+}
+
+.category-content.full-width {
+    width: 100%;
+}
+
+.category-articles {
+    display: none;
+}
+
+.category-articles.active {
+    display: block;
+}
+
+.category-header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.category-header h2 {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .blog-category-container {
+        flex-direction: column;
+    }
+    
+    .category-content {
+        width: 100%;
+    }
+    
+    .category-articles {
+        display: none;
+    }
+    
+    .category-articles.active {
+        display: block;
+    }
+}
+
+/* 返回按钮样式 */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .header-left {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+} 

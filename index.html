@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACOB CHEN</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="site-header">
+        <div class="header-inner centered-logo">
+            <div class="site-branding">
+                <a href="index.html" class="logo">INDEPENDENT<br>FILMMAKER</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 主要内容区域 -->
+    <main class="site-content">
+        <!-- 首页全屏区域 -->
+        <section id="home" class="hero-section">
+            <div class="hero-background">
+                <div class="bg-slider">
+                    <div class="bg-slide active"><img src="images/bg1.jpg" alt="Background 1"></div>
+                    <div class="bg-slide"><img src="images/bg2.jpg" alt="Background 2"></div>
+                    <div class="bg-slide"><img src="images/bg3.jpg" alt="Background 3"></div>
+                    <div class="bg-slide"><img src="images/bg4.jpg" alt="Background 4"></div>
+                    <div class="bg-slide"><img src="images/bg5.jpg" alt="Background 5"></div>
+                </div>
+                <div class="overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="festival-logos">
+                    <img src="images/Sessions Laurels White.png" alt="Sessions Laurels White" class="festival-logo">
+                    <img src="images/Lulea Selection White.png" alt="Lulea Selection White" class="festival-logo">
+                </div>
+                <div class="central-content">
+                    <h1 class="hero-title">JACOB CHEN</h1>
+                    <!-- 导航菜单移到JACOB CHEN下方 -->
+                    <nav class="main-navigation below-title">
+                        <ul class="nav-menu">
+                            <li><a href="work.html" class="nav-link">WORK</a></li>
+                            <li><a href="blog.html" class="nav-link">BLOG</a></li>
+                            <li><a href="#about" class="nav-link">ABOUT</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="hero-quotes">
+                    <p class="quote-line">GOD SAID: LET THERE BE LIGHT, AND THERE WAS LIGHT.</p>
+                    <p class="quote-line">LIGHT IS IN THE LIFE, AND THE LIFE IS LIGHT.</p>
+                </div>
+            </div>
+            <!-- 右侧社交媒体图标 -->
+            <div class="side-social-links">
+                <a href="#" class="social-link" title="Xiaohongshu"><i class="fa-solid fa-book"></i></a>
+                <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" title="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.main-navigation.below-title').classList.toggle('active');
+        });
+        
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 页面滚动效果
+        window.addEventListener('scroll', function() {
+            // 头部导航栏切换
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // 背景图自动轮播
+        function bgSlider() {
+            const slides = document.querySelectorAll('.bg-slide');
+            let currentSlide = 0;
+            
+            // 预加载所有图片
+            slides.forEach(slide => {
+                const img = slide.querySelector('img');
+                if (img) {
+                    // 强制浏览器预加载图片
+                    const preloadImg = new Image();
+                    preloadImg.src = img.src;
+                }
+            });
+            
+            // 设置第一张幻灯片为活动状态
+            slides[currentSlide].classList.add('active');
+            
+            setInterval(() => {
+                // 准备下一张幻灯片
+                let nextSlide = (currentSlide + 1) % slides.length;
+                
+                // 前一张幻灯片淡出
+                slides[currentSlide].classList.remove('active');
+                
+                // 下一张幻灯片淡入
+                slides[nextSlide].classList.add('active');
+                
+                // 更新当前幻灯片索引
+                currentSlide = nextSlide;
+            }, 6000); // 每6秒切换一次，给足时间完成过渡
+        }
+        
+        // 页面加载完成后启动背景轮播
+        window.addEventListener('load', bgSlider);
+    </script>
+</body>
+</html> 

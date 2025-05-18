@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编剧 - JACOB CHEN</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="blog-page">
+    <!-- 侧边导航栏 (YouTube 风格) -->
+    <div class="sidebar">
+        <a href="index.html" class="sidebar-logo">JACOB CHEN</a>
+        <nav class="sidebar-nav">
+            <!-- 修改BLOG部分的结构 -->
+            <div class="blog-container">
+            <a href="blog.html" class="nav-item active">
+                <i class="fas fa-blog"></i>
+                <span>BLOG</span>
+            </a>
+                <!-- 下拉菜单 -->
+                <div class="dropdown-content">
+                    <a href="workflow.html" class="dropdown-item" data-target="workflow">工作流程</a>
+                    <a href="director.html" class="dropdown-item" data-target="director">导演</a>
+                    <a href="writer.html" class="dropdown-item active" data-target="writer">编剧</a>
+                    <a href="cinematography.html" class="dropdown-item" data-target="cinematography">摄影</a>
+                    <a href="dit.html" class="dropdown-item" data-target="dit">DIT</a>
+                    <a href="editing.html" class="dropdown-item" data-target="editing">剪辑</a>
+                    <a href="color-grading.html" class="dropdown-item" data-target="color-grading">调色</a>
+                    <a href="nuke.html" class="dropdown-item" data-target="nuke">NUKE合成</a>
+                    <a href="houdini.html" class="dropdown-item" data-target="houdini">HOUDINI特效</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- 主要内容区域 -->
+    <main class="blog-content">
+        <!-- 博客头部区域 -->
+        <header class="blog-header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="blog-header-icons">
+                <a href="#" title="Xiaohongshu"><i class="fa-solid fa-book"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" title="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+            </div>
+        </header>
+        
+        <!-- 分类标题 -->
+        <div class="blogs-title">
+            <h2>编剧 Writer</h2>
+        </div>
+        
+        <!-- 分类内容容器 -->
+        <div class="blog-category-container">
+            <!-- 右侧文章内容 -->
+            <div class="category-content full-width">
+                <div class="category-articles active">
+                    <div class="blog-grid">
+                        <!-- 编剧文章 -->
+                        <div class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="images/bg1.jpg" alt="编剧技巧">
+                            </div>
+                            <div class="blog-card-content">
+                                <h2>编剧技巧：角色塑造的艺术</h2>
+                                <p class="blog-date">June 25, 2024</p>
+                                <p class="blog-excerpt">如何创造出复杂而真实的角色形象，使观众产生共鸣并推动故事发展的深入分析...</p>
+                                <a href="#" class="blog-read-more">Read More</a>
+                                <span class="blog-category" data-category="编剧">编剧</span>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="images/bg3.jpg" alt="剧本结构">
+                            </div>
+                            <div class="blog-card-content">
+                                <h2>超越三幕剧：当代剧本结构分析</h2>
+                                <p class="blog-date">March 20, 2024</p>
+                                <p class="blog-excerpt">探索传统三幕剧之外的故事结构模式，以及如何根据不同类型的故事选择最适合的叙事框架...</p>
+                                <a href="#" class="blog-read-more">Read More</a>
+                                <span class="blog-category" data-category="编剧">编剧</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/blog.js"></script>
+</body>
+</html> 

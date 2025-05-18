@@ -1,0 +1,489 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier', monospace;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 顶部导航栏 */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+.site-header.scrolled .nav-link {
+    color: #333;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.site-branding .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    padding-top: 60px;
+}
+
+.site-header.scrolled .logo {
+    color: #333;
+}
+
+.main-navigation {
+    display: flex;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu li {
+    margin-left: 30px;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-link:before {
+    display: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #e6c980;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    width: 30px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.site-header.scrolled .menu-toggle span {
+    background-color: #333;
+}
+
+/* 首页全屏区域 */
+.hero-section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.bg-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #000;
+}
+
+.bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s ease;
+    z-index: 1;
+    will-change: opacity;
+    backface-visibility: hidden;
+}
+
+.bg-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.bg-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    filter: brightness(0.7);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    z-index: 1;
+    position: static;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.central-content {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+    z-index: 10;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0 auto;
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 右侧社交媒体图标 */
+.side-social-links {
+    position: fixed;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+
+.side-social-links .social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(51, 51, 51, 0.7);
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.side-social-links .social-link:hover {
+    background-color: #333;
+    transform: translateX(-5px);
+}
+
+/* 各社交媒体图标悬浮时显示其品牌原色 */
+.side-social-links .social-link[title="Xiaohongshu"]:hover {
+    color: #ff2442; /* 小红书红色 */
+}
+
+.side-social-links .social-link[title="Instagram"]:hover {
+    color: #e1306c; /* Instagram粉色 */
+}
+
+.side-social-links .social-link[title="Twitter"]:hover {
+    color: #1da1f2; /* Twitter蓝色 */
+}
+
+.side-social-links .social-link[title="LinkedIn"]:hover {
+    color: #0077b5; /* LinkedIn蓝色 */
+}
+
+.side-social-links .social-link[title="Vimeo"]:hover {
+    color: #1ab7ea; /* Vimeo蓝色 */
+}
+
+/* 修改顶部导航栏样式 - 居中logo */
+.header-inner.centered-logo {
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.centered-logo .site-branding {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.centered-logo .menu-toggle {
+    position: absolute;
+    right: 20px;
+}
+
+/* 标题下方导航样式 */
+.main-navigation.below-title {
+    position: static;
+    margin: 0 auto;
+    background-color: transparent;
+    box-shadow: none;
+    width: 100%;
+    text-align: center;
+}
+
+.below-title .nav-menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.below-title .nav-menu li {
+    margin: 0 15px;
+    text-align: center;
+}
+
+.below-title .nav-link {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 5px 0;
+}
+
+.below-title .nav-link:hover,
+.below-title .nav-link.active {
+    color: #e6c980;
+}
+
+/* 引用文字样式 */
+.hero-quotes {
+    position: relative;
+    margin-top: 700px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quote-line {
+    font-size: 16px;
+    font-family: 'Courier', monospace;
+    margin: 5px auto;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+
+/* 电影节logo样式 */
+.festival-logos {
+    position: absolute;
+    top: 40px;
+    left: -80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    width: 480px;
+}
+
+.festival-logo {
+    margin-bottom: 15px;
+    height: 115px;
+    width: auto;
+    display: block;
+}
+
+/* 移动端响应式 */
+@media (max-width: 768px) {
+    .header-inner {
+        padding: 0 20px;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .main-navigation {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .main-navigation.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+    }
+    
+    .nav-menu li {
+        margin: 10px 0;
+    }
+    
+    .nav-link {
+        color: #333;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    .side-social-links {
+        right: 15px;
+    }
+    
+    .side-social-links .social-link {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .below-title {
+        display: none;
+    }
+    
+    .below-title.active {
+        display: block;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px 0;
+        z-index: 1000;
+    }
+    
+    .below-title.active .nav-menu {
+        flex-direction: column;
+    }
+    
+    .below-title.active .nav-menu li {
+        margin: 10px 0;
+    }
+    
+    .below-title.active .nav-link {
+        color: #333;
+    }
+    
+    .festival-logos {
+        top: 20px;
+        left: -20px;
+        width: 200px;
+    }
+    
+    .festival-logo {
+        height: 44px;
+    }
+}
+
+@media (max-width: 576px) {
+    .side-social-links {
+        bottom: 20px;
+        top: auto;
+        right: 50px;
+        transform: none;
+        flex-direction: row;
+    }
+} 
