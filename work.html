@@ -17,6 +17,32 @@
             color: #ffffff;
             height: 100vh;
             overflow: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            opacity: 0;
+            z-index: 0;
+        }
+        
+        body.fade-in::before {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
         
         .container {
@@ -51,8 +77,9 @@
             margin-top: 10px;
             color: #fff;
             text-decoration: none;
-            cursor: pointer;
+            cursor: text;
             transition: color 0.3s ease;
+            display: inline-block;
         }
         
         .work-title {
@@ -62,9 +89,10 @@
             letter-spacing: 0.05em;
             text-transform: uppercase;
             color: #fff;
-            cursor: pointer;
+            cursor: text;
             transition: color 0.3s ease;
             text-decoration: none;
+            display: inline-block;
         }
         
         .menu {
@@ -86,6 +114,9 @@
             position: relative;
             text-decoration: none;
             color: #fff;
+            padding: 0;
+            cursor: text;
+            pointer-events: none;
         }
         
         .menu-item span {
@@ -95,6 +126,7 @@
             position: relative;
             padding-left: 20px;
             margin-left: -20px;
+            pointer-events: auto;
         }
         
         .menu-item span::before {
@@ -104,11 +136,12 @@
             top: 0;
             width: 20px;
             height: 100%;
-            cursor: pointer;
+            cursor: text;
             background: transparent;
+            pointer-events: none;
         }
         
-        .menu-item:hover span {
+        .menu-item span:hover {
             color: #d2b48c;
         }
         
@@ -155,14 +188,14 @@
     <div class="container">
         <div class="left-panel">
             <div class="title-container">
-                <a href="index.html" class="title">JACOB CHEN</a>
-                <a href="index.html" class="work-title">WORK</a>
+                <a href="index.html" class="title" onclick="handleClick(event)">JACOB CHEN</a>
+                <a href="index.html" class="work-title" onclick="handleClick(event)">WORK</a>
             </div>
             
             <div class="menu">
-                <a href="boundary.html" class="menu-item"><span>BOUNDARY</span></a>
-                <a href="birdsmiss.html" class="menu-item"><span>BIRDS MISS THE SEA</span></a>
-                <a href="roya.html" class="menu-item"><span>ROYA</span></a>
+                <a href="boundary.html" class="menu-item" onclick="handleClick(event)"><span>BOUNDARY</span></a>
+                <a href="birdsmiss.html" class="menu-item" onclick="handleClick(event)"><span>BIRDS MISS THE SEA</span></a>
+                <a href="roya.html" class="menu-item" onclick="handleClick(event)"><span>ROYA</span></a>
                 <div class="menu-item"><span>THE INTERMISSION</span></div>
             </div>
         </div>
@@ -174,6 +207,18 @@
     <script>
         // 页面加载时自动跳转到第一个菜单页面
         window.location.href = 'boundary.html';
+
+        // 处理点击事件
+        function handleClick(event) {
+            event.preventDefault();
+            const href = event.currentTarget.getAttribute('href');
+            window.location.href = href;
+        }
+
+        // 页面加载时添加淡入效果
+        window.addEventListener('load', function() {
+            document.body.classList.add('fade-in');
+        });
     </script>
 </body>
 </html> 
