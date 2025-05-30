@@ -252,6 +252,12 @@ img {
     transition: all 0.3s ease;
 }
 
+.side-social-links .social-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
 .side-social-links .social-link:hover {
     background-color: #333;
     transform: translateX(-5px);
@@ -276,6 +282,11 @@ img {
 
 .side-social-links .social-link[title="Vimeo"]:hover {
     color: #1ab7ea; /* Vimeo蓝色 */
+}
+
+.side-social-links .social-link[title="Xiaohongshu"]:hover .social-logo,
+.side-social-links .social-link[title="新片场"]:hover .social-logo {
+    filter: brightness(0) saturate(100%) invert(12%) sepia(100%) saturate(7463%) hue-rotate(357deg) brightness(95%) contrast(112%);
 }
 
 /* 修改顶部导航栏样式 - 居中logo */
@@ -372,6 +383,21 @@ img {
     height: 115px;
     width: auto;
     display: block;
+}
+
+/* Shots LONDON Official White logo特定样式 */
+.festival-logo[alt="Shots LONDON Official White"] {
+    height: 130px;  /* 115px * 1.25 = 144px */
+}
+
+/* VENETO IFF White logo特定样式 */
+.festival-logo[alt="VENETO IFF White"] {
+    height: 95px;  /* 原来105px再减10px = 95px */
+}
+
+.festival-logo[alt="Rohip"] {
+    height: 113px;  
+    margin-top: 6px;/* 原来105px再减10px = 95px */
 }
 
 /* 移动端响应式 */
@@ -476,6 +502,14 @@ img {
     .festival-logo {
         height: 44px;
     }
+
+    .festival-logo[alt="Shots LONDON Official White"] {
+        height: 50px;  /* 44px * 1.25 = 55px */
+    }
+
+    .festival-logo[alt="VENETO IFF White"] {
+        height: 36px;  /* 等比例缩小 */
+    }
 }
 
 @media (max-width: 576px) {
@@ -485,5 +519,13 @@ img {
         right: 50px;
         transform: none;
         flex-direction: row;
+    }
+    
+    .festival-logos {
+        gap: 10px;
+    }
+    
+    .festival-logo {
+        height: 50px;
     }
 } 

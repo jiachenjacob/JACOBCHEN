@@ -31,21 +31,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0;
             z-index: 0;
-        }
-        
-        body.fade-in::before {
-            animation: fadeIn 0.5s ease forwards;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
         
         .container {
@@ -149,10 +135,6 @@
             color: #d2b48c;
         }
         
-        .menu-item.current span {
-            color: #d2b48c;
-        }
-        
         .content {
             flex: 1;
             padding: 40px;
@@ -219,11 +201,6 @@
             const href = event.currentTarget.getAttribute('href');
             window.location.href = href;
         }
-
-        // 页面加载时添加淡入效果
-        window.addEventListener('load', function() {
-            document.body.classList.add('fade-in');
-        });
     </script>
 </body>
 </html> 
