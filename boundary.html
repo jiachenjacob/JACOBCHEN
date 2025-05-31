@@ -140,10 +140,29 @@
         }
         
         .content {
-            flex: 1;
-            padding: 40px;
-            position: relative;
+            position: absolute;
+            left: 50%;
+            top: calc(50% + 300px);
+            transform: translate(-50%, -50%);
             z-index: 1;
+        }
+        
+        .watch-button {
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #fff;
+            background: transparent;
+            border: 1px solid #fff;
+            padding: 15px 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Courier', 'Courier New', monospace;
+        }
+        
+        .watch-button:hover {
+            color: #d2b48c;
+            border-color: #d2b48c;
         }
         
         @media (max-width: 768px) {
@@ -171,9 +190,16 @@
             }
             
             .content {
+                position: relative;
+                left: auto;
+                top: auto;
+                transform: none;
                 padding: 20px;
                 height: calc(100vh - 280px);
                 overflow-y: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     </style>
@@ -190,12 +216,13 @@
                 <div class="menu-item current"><span>BOUNDARY</span></div>
                 <a href="birdsmiss.html" class="menu-item" onclick="handleClick(event)"><span>BIRDS MISS THE SEA</span></a>
                 <a href="roya.html" class="menu-item" onclick="handleClick(event)"><span>ROYA</span></a>
+                <a href="dangerous.html" class="menu-item" onclick="handleClick(event)"><span>DANGEROUS PLEASURE</span></a>
                 <div class="menu-item"><span>THE INTERMISSION</span></div>
             </div>
         </div>
         
         <div class="content">
-            <!-- 内容区域 -->
+            <button class="watch-button" onclick="window.open('https://www.xiaohongshu.com/explore/6839be52000000002100d6a2?xsec_token=AB62yauP017K8IeGkqtvLuHu6lL16S8aKHKsXSeAVTIAg=&xsec_source=pc_user', '_blank')">WATCH</button>
         </div>
     </div>
     <script>

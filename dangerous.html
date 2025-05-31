@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JACOB CHEN - BIRDS MISS THE SEA</title>
+    <title>JACOB CHEN - DANGEROUS PLEASURE</title>
     <style>
         * {
             margin: 0;
@@ -27,7 +27,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/work_birdsmiss.jpg');
+            background-image: url('images/work_dangerous.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -214,19 +214,18 @@
             
             <div class="menu">
                 <a href="boundary.html" class="menu-item" onclick="handleClick(event)"><span>BOUNDARY</span></a>
-                <div class="menu-item current"><span>BIRDS MISS THE SEA</span></div>
+                <a href="birdsmiss.html" class="menu-item" onclick="handleClick(event)"><span>BIRDS MISS THE SEA</span></a>
                 <a href="roya.html" class="menu-item" onclick="handleClick(event)"><span>ROYA</span></a>
-                <a href="dangerous.html" class="menu-item" onclick="handleClick(event)"><span>DANGEROUS PLEASURE</span></a>
+                <div class="menu-item current"><span>DANGEROUS PLEASURE</span></div>
                 <div class="menu-item"><span>THE INTERMISSION</span></div>
             </div>
         </div>
         
         <div class="content">
-            <button class="watch-button">WATCH</button>
+            <button class="watch-button" onclick="window.open('https://www.bilibili.com/video/BV1bf7AzHEFX/?spm_id_from=333.1387.homepage.video_card.click&vd_source=e8020ecce06dda72e1a83c54ff607e54', '_blank')">WATCH</button>
         </div>
     </div>
     <script>
-        // 处理点击事件
         function handleClick(event) {
             event.preventDefault();
             const href = event.currentTarget.getAttribute('href');
